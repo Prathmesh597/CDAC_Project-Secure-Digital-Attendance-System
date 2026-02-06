@@ -96,11 +96,11 @@ Secure login page for all users (Admin, Faculty, Student) with Role-Based redire
 
 **User Management:** The Admin can register new Students and Faculty members securely.
 
-![Add Student Faculty](screenshots/Add%20Student%20%26%20Faculty.mp4)
+![Add Student Faculty](screenshots/Add%20Student%20%26%20Faculty.gif)
 
 **Scheduling:** Admins can schedule lectures for specific courses and subjects.
 
-![Schedule Lectures](screenshots/Schedule%20Lectures.mp4)
+![Schedule Lectures](screenshots/Schedule%20Lectures.gif)
 
 **Reporting:** Generate detailed attendance matrices and download Excel reports.
 
@@ -110,7 +110,7 @@ Secure login page for all users (Admin, Faculty, Student) with Role-Based redire
 
 **Conducting Lectures:** Faculty starts a class, which captures their geolocation and generates a time-bound OTP.
 
-![Conduct Lectures](screenshots/Conduct_Lectures.mp4)
+![Conduct Lectures](screenshots/Conduct_Lectures.gif)
 
 ### 4. Student Module
 
