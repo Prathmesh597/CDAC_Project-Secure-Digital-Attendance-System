@@ -96,7 +96,7 @@ Secure login page for all users (Admin, Faculty, Student) with Role-Based redire
 
 **User Management:** The Admin can register new Students and Faculty members securely.
 
-![Add Student Faculty](screenshots/Add%20Student%20%26%20Faculty.gif)
+![Add Student Faculty](screenshots/Add%20Student%20%26%20Faculty.mp4)
 
 **Scheduling:** Admins can schedule lectures for specific courses and subjects.
 
@@ -116,6 +116,6 @@ Secure login page for all users (Admin, Faculty, Student) with Role-Based redire
 
 **Marking Attendance:** Students enter the OTP. The system validates that they are within the allowed radius of the Faculty's location.
 
-![GeoLocation Attendance](screenshots/GeoLocation_Based_Attendance_Mark.mp4)
+![GeoLocation Attendance](screenshots/GeoLocation_Based_Attendance_Mark.gif)
 
 ---
