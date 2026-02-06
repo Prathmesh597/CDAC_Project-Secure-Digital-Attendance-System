@@ -2,8 +2,13 @@ package com.cdac.attendance.service;
 
 import com.cdac.attendance.entity.Lecture;
 import com.cdac.attendance.repository.LectureRepository;
+import com.cdac.attendance.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.cdac.attendance.entity.User; 
+import com.cdac.attendance.entity.Role; 
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -14,6 +19,9 @@ public class FacultyService {
 
     @Autowired
     private LectureRepository lectureRepository;
+    
+    @Autowired
+    private UserRepository userRepository;
 
     public List<Lecture> getFacultyLectures(Long facultyId) {
         List<Lecture> lectures = lectureRepository.findByFacultyId(facultyId);
@@ -23,11 +31,7 @@ public class FacultyService {
             if (l.getActiveOtp() != null) {
                 // If Expiry is missing (Ghost data) OR Time has passed
                 if (l.getOtpExpiryTime() == null || LocalDateTime.now().isAfter(l.getOtpExpiryTime())) {
-                    l.setActiveOtp(null); // Remove the Code (Hide from Student)
-                    
-                    // CRITICAL FIX: We DO NOT nullify otpExpiryTime anymore.
-                    // We keep it so we know this class is "Completed".
-                    
+                    l.setActiveOtp(null); 
                     lectureRepository.save(l);
                 }
             }
@@ -54,5 +58,9 @@ public class FacultyService {
         lecture.setOtpExpiryTime(LocalDateTime.now().plusMinutes(5)); 
         
         return lectureRepository.save(lecture);
+    }
+    
+    public List<User> getStudentList() {
+        return userRepository.findByRole(Role.STUDENT);
     }
 }

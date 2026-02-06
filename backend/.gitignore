@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-node_modules/
-target/
-.idea/
-.vscode/
-*.log
-*.env
-=======
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
@@ -39,4 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
->>>>>>> e85b9d0 (Implemented CRUD functionalities for all entities)

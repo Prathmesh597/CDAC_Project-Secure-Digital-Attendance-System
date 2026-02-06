@@ -76,20 +76,17 @@ public class AdminService {
         User faculty = userRepository.findById(request.getFacultyId())
                 .orElseThrow(() -> new RuntimeException("Faculty not found"));
         
-        // OLD: Subject subject = subjectRepository.findById(request.getSubjectId())...
         
         Lecture lecture = new Lecture();
         lecture.setFaculty(faculty);
-        lecture.setSubjectName(request.getSubjectName()); // NEW: Set String directly
+        lecture.setSubjectName(request.getSubjectName()); 
         lecture.setStartTime(request.getStartTime());
         
         return lectureRepository.save(lecture);
     }
     
     public List<Attendance> getLectureReport(Long lectureId) {
-        // We reuse the Repo method we created earlier!
-        // But wait, the repo method was 'findByStudentId'.
-        // We need to add 'findByLectureId' to AttendanceRepository interface first!
+      
         return attendanceRepository.findByLectureId(lectureId);
     }
     
@@ -111,5 +108,9 @@ public class AdminService {
     
     public List<Lecture> getAllLectures() {
         return lectureRepository.findAll();
+    }
+    
+    public List<Attendance> getAllAttendanceRecords() {
+        return attendanceRepository.findAll();
     }
 }
