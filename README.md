@@ -96,15 +96,11 @@ Secure login page for all users (Admin, Faculty, Student) with Role-Based redire
 
 **User Management:** The Admin can register new Students and Faculty members securely.
 
-<video src="screenshots/Add%20Student%20%26%20Faculty.mp4" controls="controls" style="max-width: 100%;">
-  Your browser does not support the video tag.
-</video>
+![Add Student Faculty](screenshots/Add%20Student%20%26%20Faculty.mp4)
 
 **Scheduling:** Admins can schedule lectures for specific courses and subjects.
 
-<video src="screenshots/Schedule%20Lectures.mp4" controls="controls" style="max-width: 100%;">
-  Your browser does not support the video tag.
-</video>
+![Schedule Lectures](screenshots/Schedule%20Lectures.mp4)
 
 **Reporting:** Generate detailed attendance matrices and download Excel reports.
 
@@ -114,27 +110,12 @@ Secure login page for all users (Admin, Faculty, Student) with Role-Based redire
 
 **Conducting Lectures:** Faculty starts a class, which captures their geolocation and generates a time-bound OTP.
 
-<video src="screenshots/Conduct_Lectures.mp4" controls="controls" style="max-width: 100%;">
-  Your browser does not support the video tag.
-</video>
+![Conduct Lectures](screenshots/Conduct_Lectures.mp4)
 
 ### 4. Student Module
 
 **Marking Attendance:** Students enter the OTP. The system validates that they are within the allowed radius of the Faculty's location.
 
-<video src="screenshots/GeoLocation_Based_Attendance_Mark.mp4" controls="controls" style="max-width: 100%;">
-  Your browser does not support the video tag.
-</video>
+![GeoLocation Attendance](screenshots/GeoLocation_Based_Attendance_Mark.mp4)
 
 ---
-
-## API Endpoints Overview
-
-| Module  | Method | Endpoint                           | Description                      |
-| :------ | :----- | :--------------------------------- | :------------------------------- |
-| Auth    | POST   | `/api/auth/login`                  | User Login                       |
-| Auth    | POST   | `/api/auth/forgot-password`        | Send Reset OTP                   |
-| Admin   | POST   | `/api/admin/student`               | Register Student                 |
-| Admin   | POST   | `/api/admin/faculty`               | Register Faculty                 |
-| Faculty | POST   | `/api/faculty/lectures/{id}/start` | Start Class (Geo-tagging)        |
-| Student | POST   | `/api/student/mark-attendance`     | Mark Attendance (Geo-validation) |
