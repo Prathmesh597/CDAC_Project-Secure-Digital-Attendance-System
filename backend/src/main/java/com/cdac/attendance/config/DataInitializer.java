@@ -24,7 +24,7 @@ public class DataInitializer implements CommandLineRunner {
             User admin = new User();
             admin.setName("Master Admin");
             admin.setEmail("admin@example.com");
-            admin.setPassword(passwordEncoder.encode("1234")); // Hash the "1234"
+            admin.setPassword(passwordEncoder.encode("1234")); 
             admin.setRole(Role.ADMIN);
             
             userRepository.save(admin);
@@ -32,3 +32,7 @@ public class DataInitializer implements CommandLineRunner {
         }
     }
 }
+
+// ADMIN DEFAULT CREDENTIALS
+// Email: admin@example.com
+// Password: 1234

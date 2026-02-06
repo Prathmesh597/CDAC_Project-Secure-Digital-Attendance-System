@@ -68,4 +68,9 @@ public class AdminController {
     public ResponseEntity<List<Lecture>> getAllLectures() {
         return ResponseEntity.ok(adminService.getAllLectures());
     }
+    
+    @GetMapping("/attendance/all")
+    public ResponseEntity<List<Attendance>> getAllAttendance() {
+        return ResponseEntity.ok(adminService.getAllAttendanceRecords());
+    }
 }

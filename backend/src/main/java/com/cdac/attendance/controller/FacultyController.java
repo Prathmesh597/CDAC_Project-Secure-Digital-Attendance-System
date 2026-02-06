@@ -1,6 +1,7 @@
 package com.cdac.attendance.controller;
 
 import com.cdac.attendance.entity.Lecture;
+import com.cdac.attendance.entity.User;
 import com.cdac.attendance.service.FacultyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,5 +33,10 @@ public class FacultyController {
             location.get("lon")
         );
         return ResponseEntity.ok("Class Started! OTP is: " + updatedLecture.getActiveOtp());
+    }
+    
+    @GetMapping("/students")
+    public ResponseEntity<List<User>> getStudents() {
+        return ResponseEntity.ok(facultyService.getStudentList());
     }
 }
