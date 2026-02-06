@@ -96,7 +96,7 @@ Secure login page for all users (Admin, Faculty, Student) with Role-Based redire
 
 **User Management:** The Admin can register new Students and Faculty members securely.
 
-![Add Student Faculty](screenshots/Add%20Student%20%26%20Faculty.mp4)
+![Add Student Faculty](screenshots/Add%20Student%20%26%20Faculty.gif)
 
 **Scheduling:** Admins can schedule lectures for specific courses and subjects.
 
