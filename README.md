@@ -32,9 +32,91 @@ Ensure you have the following installed on your machine:
 - MySQL Server
 - Maven
 
-### 2. Clone the Repository
+### 2. Database Setup
 
-```bash
-git clone [https://github.com/Prathmesh597/CDAC_Project-Secure-Digital-Attendance-System.git](https://github.com/Prathmesh597/CDAC_Project-Secure-Digital-Attendance-System.git)
-cd CDAC_Project-Secure-Digital-Attendance-System
-```
+1.  Open your MySQL Workbench or Command Line.
+2.  Create a database named `attendance_db`.
+3.  Ensure your MySQL server is running on port `3306`.
+
+### 3. Backend Setup
+
+1.  Open a terminal and navigate to the backend directory:
+
+    ```bash
+    cd backend
+    ```
+
+2.  **Configuration:**
+    Ensure you have updated `src/main/resources/application.properties` with your local MySQL credentials and Email App Password as required.
+
+3.  **Build and Run:**
+    Run the following command to download dependencies and start the server:
+
+    ```bash
+    mvn spring-boot:run
+    ```
+
+    Alternatively, if you want to build the JAR file first:
+
+    ```bash
+    mvn clean install
+    java -jar target/attendance-management-backend-0.0.1-SNAPSHOT.jar
+    ```
+
+4.  The Backend will start on: `http://localhost:8080`
+
+### 4. Frontend Setup
+
+1.  Open a new terminal window (keep the backend running) and navigate to the frontend directory:
+
+    ```bash
+    cd frontend
+    ```
+
+2.  **Install Dependencies:**
+    Download the required node modules:
+
+    ```bash
+    npm install
+    ```
+
+3.  **Run the Application:**
+    Start the Vite development server:
+
+    ```bash
+    npm run dev
+    ```
+
+4.  The Frontend will start on: `http://localhost:5173`
+
+---
+
+## Project Walkthrough
+
+### 1. Authentication
+
+Secure login page for all users (Admin, Faculty, Student) with Role-Based redirection.
+![Login Page](screenshots/Login_Page.jpg)
+
+### 2. Admin Module
+
+**User Management:** The Admin can register new Students and Faculty members securely.
+![Add Student & Faculty](screenshots/Add%20Student%20&%20Faculty.mp4)
+
+**Scheduling:** Admins can schedule lectures for specific courses and subjects.
+![Schedule Lectures](screenshots/Schedule%20Lectures.mp4)
+
+**Reporting:** Generate detailed attendance matrices and download Excel reports.
+![Download Attendance Report](screenshots/Download_Attendance_Report.jpg)
+
+### 3. Faculty Module
+
+**Conducting Lectures:** Faculty starts a class, which captures their geolocation and generates a time-bound OTP.
+![Conduct Lectures](screenshots/Conduct_Lectures.mp4)
+
+### 4. Student Module
+
+**Marking Attendance:** Students enter the OTP. The system validates that they are within the allowed radius of the Faculty's location.
+![GeoLocation Attendance](screenshots/GeoLocation_Based_Attendance_Mark.mp4)
+
+---
